@@ -26,9 +26,9 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat|Courgette' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-partenaires.css">
   
-  <title>Groupiiir - Accueil</title>
+  <title>Groupiiir - Devenir partenaire</title>
 
 </head>
 <body>
@@ -47,8 +47,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Team-building <span class="sr-only">(current)</span></a></li>
-        <li><a href="www.groupiiir.fr/partenaires">Devenir partenaire</a></li>
+        <li ><a href="www.groupiiir.fr">Team-building </a></li>
+        <li class="active"><a href="#">Devenir partenaire<span class="sr-only">(current)</span></a></li>
       </ul>
 
       
@@ -56,59 +56,11 @@
   </div><!-- /.container-fluid -->
 </nav>
 
- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="img/room.jpg" alt="salle">
-      <div class="carousel-caption">
-         <h2><strong>Creativity Room</strong></h2>
-          <p>Sortez du cadre pour mieux réfléchir !</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="img/cuisine.jpg" alt="cuisine" >
-      <div class="carousel-caption">
-       <h2><strong>Atelier créatif</strong></h2>
-          <p>Cinéma, cuisine, mécanique... créez ensemble !</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="img/party.jpg" alt="party">
-      <div class="carousel-caption">
-        <h2><strong>Party</strong></h2>
-          <p>Amusez-vous pour mieux travailler !</p>
-      </div>
-    </div>
-    
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Précédente</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Suivante</span>
-  </a>
-</div>
-
-
-
+<img src="img/partnership.jpg" alt="Partenaires" style="height:auto" class="img-responsive center-block">
 
   <div id="description">
-  <p><strong>Gagnez du temps et de l'argent</strong> pour l'organisation de vos sessions de team-building en utilisant le formulaire Groupiiir.<br></br>Indiquez ci-dessous votre besoin et recevez rapidement les offres sélectionnées pour vous chez nos partenaires !</p>
-<p><img src="img/6592-200.png" alt="team" style="width:80px;height:80px;border-radius:50%;background-color:white;padding:2px" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="img/27836-200.png" alt="time" style="width:80px;height:80px;border-radius:50%;background-color:white;padding:2px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="img/7383-200.png" alt="euro" style="width:80px;height:80px;border-radius:50%;background-color:white;padding:2px"></p>
+  <p>Vous êtes une agence d'évènementiel spécialisée dans le team-building ? Prestataire de service d'activité de team-building ? Vous louez un espace original pouvant accueillir un groupe de personne extérieure ?<br><strong> Devenez Partenairede Groupiiir !</strong></br> Vous accèderez GRATUITEMENT à notre flux d'affaires et pourrez proposer vos seervices personnalisés. Si, et seulement si votre offre est sélectionnée par le client et qu'un contrat est conclu, Groupiiir prélèvera une commission nette de 15%.<br></br>Alors ne manquez plus une seule opportunité de conclure une affaire et inscrivez-vous en 2 minutes grâce au formulaire ci-dessous !</p>
+<p><img src="img/6592-200.png" alt="euro" style="width:80px;height:80px;border-radius:50%;background-color:white;padding:2px"></p>
 
   </div>
 
@@ -121,7 +73,7 @@
   <?php endif; ?>
   <?php if(array_key_exists('success',$_SESSION)): ?>
   <div class="alert alert-success">
-  Votre demande a bien été transmise !
+  Inscription réussie !
   </div>
   <?php endif; ?>
 
@@ -132,80 +84,45 @@
 
 <!-- Multiple Checkboxes -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Type">Vous souhaitez organiser...</label>
+  <label class="col-md-4 control-label" for="Type">Vous êtes...</label>
   <div class="col-md-4">
   <div class="checkbox">
     <label for="Type-0">
-      <input type="checkbox" name="Type" id="Type-0" value="Une ou plusieurs activités de team-building">
-      Une ou plusieurs activités de team-building
+      <input type="checkbox" name="Type" id="Type-0" value="Une agence évènementiel">
+      Une agence évènementiel
     </label>
   </div>
   <div class="checkbox">
     <label for="Type-1">
-      <input type="checkbox" name="Type" id="Type-1" value="Une séance de travail hors-les-murs">
-      Une séance de travail hors-les-murs
+      <input type="checkbox" name="Type" id="Type-1" value="Une agence spécialisée team-building">
+      Une agence spécialisée team-building
     </label>
   </div>
   <div class="checkbox">
     <label for="Type-2">
-      <input type="checkbox" name="Type" id="Type-2" value="Un repas">
-      Un repas
+      <input type="checkbox" name="Type" id="Type-2" value="Un prestataire d'activité de team-building">
+      Un prestataire d'activité de team-building
     </label>
   </div>
   <div class="checkbox">
     <label for="Type-3">
-      <input type="checkbox" name="Type" id="Type-3" value="Une soirée">
-      Une soirée
+      <input type="checkbox" name="Type" id="Type-3" value="Autre">
+      Autre
     </label>
   </div>
   </div>
 </div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Date">Quand ?</label>  
-  <div class="col-md-2">
-  <input id="Date" name="Date" type="date" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Date'])? $_SESSION['inputs']['Date'] : ''; ?>">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Lieu">Où ?</label>  
-  <div class="col-md-2">
-  <input id="Lieu" name="Lieu" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Lieu'])? $_SESSION['inputs']['Lieu'] : ''; ?>">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Participants">Combien y aura-t-il de participants ?</label>  
-  <div class="col-md-1">
-  <input id="Participants" name="Participants" type="number" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Participants'])? $_SESSION['inputs']['Participants'] : ''; ?>">
-    
-  </div>
-</div>
-
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Brief">Votre brief (contexte, besoins spécifiques, souhaits...)</label>
+  <label class="col-md-4 control-label" for="Descritpion">Une courte description</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="Brief" name="Brief"><?php echo isset($_SESSION['inputs']['Brief'])? $_SESSION['inputs']['Brief'] : ''; ?>Nous souhaitons organiser ...</textarea>
-  </div>
-</div>
-
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Antibrief">Votre anti-brief (ce que vous ne souhaitez pas)</label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="Antibrief" name="Antibrief"><?php echo isset($_SESSION['inputs']['Antibrief'])? $_SESSION['inputs']['Antibrief'] : ''; ?>Nous ne voulons surtout pas ...</textarea>
+    <textarea class="form-control" id="Description" name="Description"><?php echo isset($_SESSION['inputs']['Description'])? $_SESSION['inputs']['Description'] : ''; ?>Vos activités ? Key words ? Votre expérience ? Vos particularités ?</textarea>
   </div>
 </div>
 
 
-<div class="element-separator" title="identité"><hr><h3 class="section-break-title">Ces informations ne seront pas transmises à nos partenaires</h3></div>
+<div class="element-separator" title="identité"><hr><h3 class="section-break-title">Contacts</h3></div>
 
 <!-- Text input-->
 <div class="form-group">
@@ -262,6 +179,15 @@
               </div>
             </fieldset>
 
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Website">Site Web</label>  
+  <div class="col-md-4">
+  <input id="Website" name="Website" type="url" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Website'])? $_SESSION['inputs']['Website'] : ''; ?>">
+    
+  </div>
+</div>
 
 <!-- Multiple Checkboxes -->
 <div class="form-group">
