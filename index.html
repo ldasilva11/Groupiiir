@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Include Google Maps JS API -->
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDHWR278mBE8yz5rTl7cfYXgZdqC4EPyFM">
+</script>
+
+<!-- Custom JS code to bind to Autocomplete API -->
+<!-- find it here: https://github.com/lewagon/google-place-autocomplete/blob/gh-pages/autocomplete.js -->
+<!-- We'll detail this file in the article -->
+<script type="text/javascript" src="js/autocomplete.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="js/jquery.js"></script>
+ 
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat|Courgette' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Groupiiir - Accueil</title>
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+
+      </button>
+      <a class="navbar-brand" href="#">Groupiiir</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Team-building <span class="sr-only">(current)</span></a></li>
+        <li><a href="www.groupiiir.fr/partenaires">Devenir partenaire</a></li>
+      </ul>
+
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div id="header">
+    <h1 id="title"> </h1>
+    <h2 id="catch"> </h2>
+  </div>
+
+  <div id="description">
+  <p><strong>Gagnez du temps et de l'argent</strong> pour l'organisation de vos sessions de team-building en utilisant le formulaire Groupiiir.<br></br>
+<img src="img/6592-200.png" alt="team" style="width:80px;height:80px;border-radius:50%;background-color:white;padding:2px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="img/27836-200.png" alt="time" style="width:80px;height:80px;border-radius:50%;background-color:white;padding:2px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="img/7383-200.png" alt="euro" style="width:80px;height:80px;border-radius:50%;background-color:white;padding:2px">
+  <br></br>Indiquez ci-dessous votre besoin et recevez rapidement les offres sélectionnées pour vous chez nos partenaires !</p>
+  </div>
+
+<div id="formulaire">
+<form class="form-horizontal">
+<fieldset>
+
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Type">Vous souhaitez organiser...</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="Type-0">
+      <input type="checkbox" name="Type" id="Type-0" value="Une ou plusieurs activités de team-building">
+      Une ou plusieurs activités de team-building
+    </label>
+  </div>
+  <div class="checkbox">
+    <label for="Type-1">
+      <input type="checkbox" name="Type" id="Type-1" value="Une séance de travail hors-les-murs">
+      Une séance de travail hors-les-murs
+    </label>
+  </div>
+  <div class="checkbox">
+    <label for="Type-2">
+      <input type="checkbox" name="Type" id="Type-2" value="Un repas">
+      Un repas
+    </label>
+  </div>
+  <div class="checkbox">
+    <label for="Type-3">
+      <input type="checkbox" name="Type" id="Type-3" value="Une soirée">
+      Une soirée
+    </label>
+  </div>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Date">Quand ?</label>  
+  <div class="col-md-2">
+  <input id="Date" name="Date" type="date" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Lieu">Où ?</label>  
+  <div class="col-md-2">
+  <input id="Lieu" name="Lieu" type="text" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Participants">Combien y aura-t-il de participants ?</label>  
+  <div class="col-md-1">
+  <input id="Participants" name="Participants" type="number" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Brief">Votre brief (contexte, besoins spécifiques, souhaits...)</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="Brief" name="Brief">Nous souhaitons organiser ...</textarea>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Antibrief">Votre anti-brief (ce que vous ne souhaitez pas)</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="Antibrief" name="Antibrief">Nous ne voulons surtout pas ...</textarea>
+  </div>
+</div>
+
+
+<div class="element-separator" title="identité"><hr><h3 class="section-break-title">Ces informations ne seront pas transmises à nos partenaires</h3></div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Nom">Nom</label>  
+  <div class="col-md-2">
+  <input id="Nom" name="Nom" type="text" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Prénom">Prénom</label>  
+  <div class="col-md-2">
+  <input id="Prénom" name="Prénom" type="text" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Email">Adresse Email</label>  
+  <div class="col-md-4">
+  <input id="Email" name="Email" type="email" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Société">Société</label>  
+  <div class="col-md-4">
+  <input id="Société" name="Société" type="text" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+            <fieldset>
+               <div class="form-group">
+                <label class="col-sm-4 control-label">Adresse</label>
+                <div class="col-sm-5">
+                  <input id="user_input_autocomplete_address" name="user_input_autocomplete_address"
+                         class="form-control" placeholder="...">
+                </div>
+              </div>
+            </fieldset>
+
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Newsletter"></label>
+  <div class="col-md-6">
+  <div class="checkbox">
+    <label for="Newsletter-0">
+      <input type="checkbox" name="Newsletter" id="Newsletter-0" value="Oui">
+      Soutenez notre projet et abonnez-vous à notre newsletter pour rester informé de nos trouvailles en matière de team-building !
+    </label>
+  </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="btn_envoi"></label>
+  <div class="col-md-4">
+    <button id="btn_envoi" name="btn_envoi" class="btn btn-info">Envoyer</button>
+  </div>
+</div>
+
+</fieldset>
+
+
+            <fieldset class="disabled">
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <input id="street_number" name="street_number" disabled="true" class="form-control" type="hidden">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <input id="route" name="route" disabled="true" class="form-control" type="hidden">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <input id="locality" name="locality" disabled="true" class="form-control"type="hidden">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <input id="administrative_area_level_1" name="administrative_area_level_1" disabled="true" class="form-control" type="hidden">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <input id="postal_code" name="postal_code" disabled="true" class="form-control" type="hidden">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <input id="country" name="country" disabled="true" class="form-control" type="hidden">
+                </div>
+              </div>
+            </fieldset>
+</form>
+</div>
+
+
+  <div id="footer">
+    <p><strong>Nous contacter : contact.groupiiir@gmail.com </strong> <br>  Copyright Groupiiir 2015</p>
+  </div>
+
+</body>
+</html>
+
+

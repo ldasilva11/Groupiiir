@@ -1,0 +1,81 @@
+h3
+{font-size: 16px;
+padding-left: 30px;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	color: rgb(240,240,240);
+		
+	/*background:  linear-gradient(
+      rgba(50, 50, 50, 0.90), 
+      rgba(50, 50, 50, 0.90)
+    ),url(http://img0.cfstatic.com/wallpapers/f0f9102ecddabc2fd56c6781a0b3e7f7_large.jpeg);*/
+   	background:  rgb(60, 90, 125);
+}
+
+
+p{
+	font-size: 20px;
+	font-weight: 600px;
+	padding:30px;
+	padding-left: 100px;
+	padding-right: 100px;
+	text-align: center;
+
+}
+
+
+.navbar-brand {
+	font-family: 'Courgette', cursive;
+	color: rgb(50, 130, 190);
+	font-size: 35px;
+
+}
+
+#navbar p{
+	font-size: 35px;
+	font-weight: 750px;
+	padding:8px;
+	background-color: rgb(50, 130, 190);
+	color: rgb(230,230,230);
+}
+
+#header{
+	font-family: 'Montserrat', sans-serif;
+	text-align: left;
+	padding-left: 30px;
+	padding-top: 10px;
+	padding-bottom: 90px;
+	color: rgb(50, 130, 190);
+	background: url("http://img0.cfstatic.com/wallpapers/4966d5ee1ea97d4609c5d6f02c3d4ebf_large.jpeg");
+	background-size: 2000px;
+}
+
+#title{
+	font-size: 80px;
+	font-family: 'Courgette', cursive;
+}
+
+#catch{
+	font-size: 32px;
+	color: rgb(46, 204, 113);
+	font-family: 'Courgette', cursive;
+}
+
+#formulaire{
+
+	padding-top: 50px;
+	border-radius: 15px;
+	background-color: rgba(100,130,150, 0.52);
+	margin:66px;
+}
+
+#footer p{
+	font-size:15px;
+	background-color: rgb(225, 225, 225);
+	text-align: right;
+	margin : -12px;
+	color:rgb(40,40,40);
+	padding-right: 30px;
+}
