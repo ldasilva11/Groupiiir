@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,8 +112,21 @@
 
   </div>
 
+<!-- CONTENT -->
+  <div class="container">
+  <?php if(array_key_exists('errors',$_SESSION)): ?>
+  <div class="alert alert-danger">
+  <?= implode('<br>', $_SESSION['errors']); ?>
+  </div>
+  <?php endif; ?>
+  <?php if(array_key_exists('success',$_SESSION)): ?>
+  <div class="alert alert-success">
+  Votre demande a bien été transmise !
+  </div>
+  <?php endif; ?>
+
 <div id="formulaire">
-<form class="form-horizontal">
+<form class="form-horizontal" action="send_form.php" method="post">
 <fieldset>
 
 
@@ -148,7 +165,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Date">Quand ?</label>  
   <div class="col-md-2">
-  <input id="Date" name="Date" type="date" placeholder="" class="form-control input-md" required="">
+  <input id="Date" name="Date" type="date" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Date'])? $_SESSION['inputs']['Date'] : ''; ?>">
     
   </div>
 </div>
@@ -157,7 +174,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Lieu">Où ?</label>  
   <div class="col-md-2">
-  <input id="Lieu" name="Lieu" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Lieu" name="Lieu" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Lieu'])? $_SESSION['inputs']['Lieu'] : ''; ?>">
     
   </div>
 </div>
@@ -166,7 +183,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Participants">Combien y aura-t-il de participants ?</label>  
   <div class="col-md-1">
-  <input id="Participants" name="Participants" type="number" placeholder="" class="form-control input-md" required="">
+  <input id="Participants" name="Participants" type="number" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Participants'])? $_SESSION['inputs']['Participants'] : ''; ?>">
     
   </div>
 </div>
@@ -175,7 +192,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Brief">Votre brief (contexte, besoins spécifiques, souhaits...)</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="Brief" name="Brief">Nous souhaitons organiser ...</textarea>
+    <textarea class="form-control" id="Brief" name="Brief"><?php echo isset($_SESSION['inputs']['Brief'])? $_SESSION['inputs']['Brief'] : ''; ?>Nous souhaitons organiser ...</textarea>
   </div>
 </div>
 
@@ -183,7 +200,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Antibrief">Votre anti-brief (ce que vous ne souhaitez pas)</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="Antibrief" name="Antibrief">Nous ne voulons surtout pas ...</textarea>
+    <textarea class="form-control" id="Antibrief" name="Antibrief"><?php echo isset($_SESSION['inputs']['Antibrief'])? $_SESSION['inputs']['Antibrief'] : ''; ?>Nous ne voulons surtout pas ...</textarea>
   </div>
 </div>
 
@@ -194,7 +211,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Nom">Nom</label>  
   <div class="col-md-2">
-  <input id="Nom" name="Nom" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Nom" name="Nom" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Nom'])? $_SESSION['inputs']['Nom'] : ''; ?>">
     
   </div>
 </div>
@@ -203,7 +220,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Prénom">Prénom</label>  
   <div class="col-md-2">
-  <input id="Prénom" name="Prénom" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Prénom" name="Prénom" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Prénom'])? $_SESSION['inputs']['Prénom'] : ''; ?>">
     
   </div>
 </div>
@@ -212,7 +229,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Email">Adresse Email</label>  
   <div class="col-md-4">
-  <input id="Email" name="Email" type="email" placeholder="" class="form-control input-md" required="">
+  <input id="Email" name="Email" type="email" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Email'])? $_SESSION['inputs']['Email'] : ''; ?>">
     
   </div>
 </div>
@@ -221,7 +238,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Société">Société</label>  
   <div class="col-md-4">
-  <input id="Société" name="Société" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Société" name="Société" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo isset($_SESSION['inputs']['Société'])? $_SESSION['inputs']['Société'] : ''; ?>">
     
   </div>
 </div>
@@ -231,7 +248,7 @@
                 <label class="col-sm-4 control-label">Adresse</label>
                 <div class="col-sm-5">
                   <input id="user_input_autocomplete_address" name="user_input_autocomplete_address"
-                         class="form-control" placeholder="...">
+                         class="form-control" placeholder="..." value="<?php echo isset($_SESSION['inputs']['user_input_autocomplete_address'])? $_SESSION['inputs']['user_input_autocomplete_address'] : ''; ?>">
                 </div>
               </div>
             </fieldset>
@@ -303,5 +320,10 @@
 
 </body>
 </html>
+
+<?php
+unset($_SESSION['inputs']); // on nettoie les données précédentes
+  unset($_SESSION['success']);
+  unset($_SESSION['errors']);
 
 
